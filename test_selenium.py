@@ -1,14 +1,12 @@
 from selenium import webdriver
+import os
 
-GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
-CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+option = webdriver.ChromeOptions()
+option.binary_location = os.getenv('GOOGLE_CHROME_BIN')
+option.add_argument("--headless")
+option.add_argument('--disable-gpu')
+option.add_argument('--no-sandbox')
 
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--disable-gpu')
-chrome_options.add_argument('--no-sandbox')
-chrome_options.binary_location = GOOGLE_CHROME_PATH
-
-driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
-
+driver = webdriver.Chrome(executable_path=os.getenv('CHROME_EXECUTABLE_PATH'), options=option)
 driver.get('https://emploisfp-psjobs.cfp-psc.gc.ca/psrs-srfp/applicant/page2440?fromMenu=true&toggleLanguage=en')
 print(driver.page_source)
