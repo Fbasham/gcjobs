@@ -1,1 +1,1 @@
-web:gunicorn app:gcjobsapp
+web: gunicorn gcjobsapp:app
