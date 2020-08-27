@@ -82,6 +82,8 @@ print('async finished running')
 DATABASE_URL = os.environ['DATABASE_URL']
 with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
     c = conn.cursor()
+    print(conn)
+    print(c)
     try:
         c.execute('drop table job;')
     except:
