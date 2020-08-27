@@ -23,10 +23,10 @@ def index():
     if request.method == 'GET':
         jobs=Job.query.all()
     else:
-        form = request.form.get('search').lower()
+        form = request.form.get('search')
         a = form.split(',')
-        s = ' & '.join(f'Job.contents.contains("{x.strip()}")' for x in a)
-        jobs=Job.query.filter(eval(s)).all()
+        s = ' & '.join(f'Job.contents.ilike(f"%{x.strip()}%")' for x in a)
+        jobs = Job.query.filter(eval(s)).all()
     return render_template('index.html',jobs=jobs)
 
 
