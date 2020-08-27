@@ -49,9 +49,8 @@ except Exception as e:
         
 finally:
     driver.quit()
-
-for row in CACHE:
-    print(row)
+    print('selenium finished running')
+    
     
 async def scrape(s,d):
     try:
@@ -72,22 +71,23 @@ async def scrape(s,d):
     return d
 
 
-async def main():
-    
+async def main():    
     s = AsyncHTMLSession()
     tasks = (scrape(s,d) for d in CACHE)
     return await asyncio.gather(*tasks)
-
         
 asyncio.run(main())
+print('async finished running')
 
 DATABASE_URL = os.environ['DATABASE_URL']
 with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
     c = conn.cursor()
     try:
-        c.execute('drop table job')
+        c.execute('drop table job;')
+        conn.commit()
     except:
         pass
-    c.execute('create table if not exists job (url text, title text, closing text, department text, location text, contents text)')
-    c.executemany('insert into job values (?,?,?,?,?,?)', (tuple(d.values()) for d in CACHE))
+    c.execute('create table if not exists job (url text, title text, closing text, department text, location text, contents text);')
+    conn.commit()
+    c.executemany('insert into job values (%s,%s,%s,%s,%s,%s)', (tuple(d.values()) for d in CACHE))
     conn.commit()
