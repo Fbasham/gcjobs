@@ -1,1 +1,4 @@
 selenium
+requests_html
+bs4
+psycopg2
