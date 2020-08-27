@@ -88,13 +88,7 @@ with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
         c.execute('drop table job;')
     except:
         pass
-    c.execute('''CREATE TABLE job (
-                            url text PRIMARY KEY, 
-                            title text, 
-                            closing text, 
-                            department text, 
-                            location text, 
-                            contents text);''')
-    conn.commit()
+    c.execute('CREATE TABLE job (url text PRIMARY KEY, title text, closing text, department text, location text, contents text);')
+
     c.executemany('insert into job values (%s,%s,%s,%s,%s,%s)', (tuple(d.values()) for d in CACHE))
     conn.commit()
