@@ -9,8 +9,8 @@ db = SQLAlchemy(app)
 
 
 class Job(db.Model):
-    #rowid = db.Column(db.Integer, primary_key=True)
-    url = db.Column(db.Text, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
+    url = db.Column(db.Text)
     title = db.Column(db.Text)
     closing = db.Column(db.Text)
     department = db.Column(db.Text)
