@@ -92,7 +92,7 @@ with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
                             closing text, 
                             department text, 
                             location text, 
-                            contents text)')
+                            contents text)''')
     conn.commit()
     c.executemany('insert into job values (%s,%s,%s,%s,%s,%s)', (tuple(d.values()) for d in CACHE))
     conn.commit()
