@@ -50,7 +50,9 @@ except Exception as e:
 finally:
     driver.quit()
 
-
+for row in CACHE:
+    print(row)
+    
 async def scrape(s,d):
     try:
         url = d.get('url')
