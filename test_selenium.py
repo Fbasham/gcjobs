@@ -79,8 +79,8 @@ async def main():
         
 asyncio.run(main())
 
-
-with sqlite3.connect('gcjobs.db') as conn:
+DATABASE_URL = os.environ['DATABASE_URL']
+with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
     c = conn.cursor()
     try:
         c.execute('drop table job')
