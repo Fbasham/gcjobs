@@ -3,7 +3,7 @@ import scrape
 
 scheduler = BlockingScheduler()
 
-@scheduler.scheduled_job('interval', hours=12, start_date='2020-08-27 17:02:00')
+@scheduler.scheduled_job('interval', hours=12, start_date='2020-08-27 17:10:00')
 def job():
     print('running scheduled scrape')
     scrape.main()
