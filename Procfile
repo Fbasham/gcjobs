@@ -1,1 +1,1 @@
-web: gunicorn gcjobsapp:app
+web: gunicorn gcjobsapp:app clock: python sched.py
