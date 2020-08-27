@@ -25,7 +25,7 @@ def index():
     else:
         form = request.form.get('search')
         a = form.split(',')
-        s = ' & '.join(f'Job.contents.contains("{x.strip()}")' for x in a)
+        s = ' & '.join(f'Job.contents.contains("{x.strip().lower()}")' for x in a)
         jobs=Job.query.filter(eval(s)).all()
     return render_template('index.html',jobs=jobs)
 
