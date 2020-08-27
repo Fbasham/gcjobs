@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+
+
+<div class="container py-2">
+    <h4>About</h4>
+</div>
+
+<div class="container">
+    <p class="text-break">The intent of this project is extend the functionality of the official
+    <i><a href="https://emploisfp-psjobs.cfp-psc.gc.ca/psrs-srfp/applicant/page2440?fromMenu=true&toggleLanguage=en" target="_">GC Jobs website</a></i>.
+    Currently, there's no way to search posters for keywords.  Thus, the user is left to helplessly guess, or worse,
+    indivdually open job posters to find the content they <i>might</i> be looking for.  When it comes to job hunting, why spend the bulk of your time searching
+    for the perfect oppourtunity?  Save it for the screening questions <span>&#128521;</span></p>
+</div>
+
+<br>
+
+<div class="container py-2">
+    <h4>How it Works</h4>
+</div>
+
+<div class="container">
+    <p class="text-break">This site is written in pure Python.  The official GC Jobs website only lets you do a partial text search by job title or location.
+    Often times the job title isn't 100% reflective of the actual duties you might expect to carry out day-to-day.
+    <br>
+    <br>
+    Unfortunately there isn't a public API to hook into to conveniently grab job content in JSON format.
+    Another shortcoming is that the GC Jobs website is heavily rendered in Javascript to initially load and paginate all of the job posters.  This makes
+    it slightly more difficult to cleanly grab content as quickly as possible using Python.  
+    The workaround for this is to use Selenium, a broweser automation/simulating tool to navigate through through the GC Jobs website, collect the links to each
+    poster, and store them in a list.
+    <br>
+    <br>
+    Once all of the links have been collected, asynchronous HTTP requests can be made to each poster since the content doesn't isn't actually rendered in Javascript.
+    The HTML content of the posters and other pertinent fields are then written to a database where it can be efficiently queried using an object-relational mapper (ORM).
+    In case you're wondering what third party packages I used for this project:
+    </p>
+</div>
+
+
+<div class="container">
+<div class="codehilite bg-light"><pre>
+ beautifulsoup4     (HTML parsing)
+ Flask              (web framework)
+ Flask-WTF          (form creation)
+ requests-html      (HTTP requests/HTML parsing)
+ selenium           (browser simulation/automation, can handle Javascript)
+ SQLAlchemy         (ORM for database)
+</pre></div>
+</div>
+
+<div class="container">
+    <p class="text-break">The list of standard library modules is even smaller:
+    </p>
+</div>
+
+
+<div class="container">
+<div class="codehilite bg-light"><pre>
+ asyncio            (asynchronous utilities)
+ sqlite3            (database)
+ re                 (regular expressions)
+</pre></div>
+</div>
+
+<br>
+
+<div class="container py-2">
+    <h4>Author</h4>
+</div>
+
+<div class="container">
+    <p class="text-break">My name's Frank and I'm the author of the GC Jobs Search codebase and website.  I'm an employee of the Canadian Coast Guard.
+    Although I have a degree in Chemical Engineering and no longer work in the field, I'm hugely passionate about computer science.  It's a lot like
+    building LEGO, which is probably why I feel like a kid again every day I write code and push myself to do something new.
+    
+    <div>
+    <i class="fab fa-lg fa-linkedin mr-2" style="color: #148cd6"></i><a href="https://ca.linkedin.com/in/frank-basham" target="_">Frank Basham</a>
+    </div>
+</div>
+
+{% endblock %}
+

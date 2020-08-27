@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form class="form-inline pb-2" action="" method="post">
+        <div class="input-group w-100">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-search text-white"
+                aria-hidden="true"></i></span>
+          </div>
+          <input class="form-control" type="text" placeholder="Search" name="search"
+        </div>
+    </form>
+
+    <table class="table table-hover" align="center">
+        <tr>
+           <th class="text-nowrap" style="font-size:18px">Title</th>
+           <th class="text-nowrap" style="font-size:18px">Department</th>
+           <th class="text-nowrap" style="font-size:18px">Closing Date</th>
+        {% for job in jobs %}
+        <tr>
+            <td><a href={{ job.url }} target="_blank">{{ job.title }}</td>
+            <td>{{ job.department }}</td>
+            <td>{{ job.closing }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

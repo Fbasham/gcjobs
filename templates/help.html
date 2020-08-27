@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="container py-2">
+    <h4>Frequently Asked Questions</h4>
+</div>
+
+<div class="container py-1">
+    <div class="accordion" id="accordion">
+    
+      <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingOne2">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne2"
+              aria-expanded="true" aria-controls="collapseOne2">
+              <i class="fas fa-plus mr-4" style="color: #148cd6"></i>How do I use the search bar?
+            </button>
+          </h5>
+        </div>
+        <div id="collapseOne2" class="collapse" aria-labelledby="headingOne2"
+          data-parent="#accordion">
+          <div class="card-body">
+            On the home page, enter your query into the search bar.  Try using single words to get the widest search possible.
+            If you'd like to refine your search using multiple criteria, use comma separated values.  For example,
+            <span class="codehilite bg-secondary"><code>python,engineering,toronto,AS-05</code></span>
+            would return all posters that contain "python" and "engineering" and "toronto" and "AS-05".  The search is case insensitive.
+          </div>
+        </div>
+      </div>
+      
+      <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingTwo2">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+              <i class="fas fa-plus mr-4" style="color: #148cd6"></i>Why can't I find the newest posters that are on the official GC Jobs website?
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo2"
+          data-parent="#accordion">
+          <div class="card-body">
+            The most likely reason is that the script to pull new jobs into the database for this site is only run once or twice
+            per day.  Depending on the time you search, the results can differ.  I do plan on experimenting with the frequency of
+            running the script, but on a day-by-day basis once or twice per day seems reasonable.
+          </div>
+        </div>
+      </div>
+      
+      <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingThree2">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
+              <i class="fas fa-plus mr-4" style="color: #148cd6"></i>What about internal job posters?
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree2" class="collapse" aria-labelledby="headingThree2"
+          data-parent="#accordion">
+          <div class="card-body">
+            Good question.  Currently there isn't support to include internal jobs for this site, but in a future update that could change.
+          </div>
+        </div>
+      </div>
+      
+      <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingFour2">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseFour2" aria-expanded="false" aria-controls="collapseFour2">
+              <i class="fas fa-plus mr-4" style="color: #148cd6"></i>How do I make a suggestion or report a bug?
+            </button>
+          </h5>
+        </div>
+        <div id="collapseFour2" class="collapse" aria-labelledby="headingFour2"
+          data-parent="#accordion">
+          <div class="card-body">
+            As of now, I've created a <a href="https://old.reddit.com/r/gcjobs/" target="_">subreddit</a> because it's widely used
+            and there is an anonymous component if you'd like to remain hidden behind a throwaway account.  
+          </div>
+        </div>
+      </div>
+      
+      <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingFive2">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseFive2" aria-expanded="false" aria-controls="collapseFive2">
+              <i class="fas fa-plus mr-4" style="color: #148cd6"></i>What happens to expired job posters?
+            </button>
+          </h5>
+        </div>
+      <div id="collapseFive2" class="collapse" aria-labelledby="headingFive2"
+          data-parent="#accordion">
+          <div class="card-body">
+            The results that you see on the home page are all of the external job posters currently available at the last time they were pulled into
+            the database for this site.  If a poster expires and is no longer viewable on the office GC Jobs website, it will be dropped on here as well.
+          </div>
+        </div>
+      </div>
+
+      <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingSix2">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseSix2" aria-expanded="false" aria-controls="collapseSix2">
+              <i class="fas fa-plus mr-4" style="color: #148cd6"></i>Is it possible to search using OR, AND, and NOT logical operators?
+            </button>
+          </h5>
+        </div>
+      <div id="collapseSix2" class="collapse" aria-labelledby="headingSix2"
+          data-parent="#accordion">
+          <div class="card-body">
+            Currently AND is the only logical operator being supported and uses the comma separated syntax outlined under "How do I use the search bar?"
+            In a future update I might include additional syntax for OR, NOT, and a combination or OR, AND, and NOT.  I don't envision there being a
+            pressing need for such searches though, which is why by default AND is the only operator supported.
+          </div>
+        </div>
+      </div>
+
+      <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingSeven2">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseSeven2" aria-expanded="false" aria-controls="collapseSeven2">
+              <i class="fas fa-plus mr-4" style="color: #148cd6"></i>Why do some searches return unexpected results?
+            </button>
+          </h5>
+        </div>
+      <div id="collapseSeven2" class="collapse" aria-labelledby="headingSeven2"
+          data-parent="#accordion">
+          <div class="card-body">
+            Depending on the search criteria, some results could be unexpected.  For example, typing
+            <span class="codehilite bg-secondary"><code>javascript</code></span> into the search bar
+            will likely return some unrelated job posters.  This is because "javascript" could be mentioned in the HTML content
+            of the poster despite not having anything to do with the actual job itself.  For most searches, this will be irrelevant,
+            but keep in mind that some searches might need to be refined.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+</div>
+
+{% endblock %}
+
