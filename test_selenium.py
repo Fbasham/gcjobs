@@ -86,7 +86,7 @@ with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
         c.execute('drop table job;')
     except:
         pass
-    c.execute('''create table if not exists job (
+    c.execute('''create table job (
                             url text primary key, 
                             title text, 
                             closing text, 
