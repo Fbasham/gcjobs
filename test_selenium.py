@@ -83,6 +83,6 @@ DATABASE_URL = os.environ['DATABASE_URL']
 with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
     c = conn.cursor()
     c.execute('drop table if exists job;')
-    c.execute('CREATE TABLE if not exists job (url text PRIMARY KEY, title text, closing text, department text, location text, contents text);')
+    c.execute('CREATE TABLE if not exists job (url text, title text, closing text, department text, location text, contents text);')
     c.executemany('insert into job values (%s,%s,%s,%s,%s,%s)', (tuple(d.values()) for d in CACHE))
     conn.commit()
