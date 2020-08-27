@@ -84,10 +84,15 @@ with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
     c = conn.cursor()
     try:
         c.execute('drop table job;')
-        conn.commit()
     except:
         pass
-    c.execute('create table if not exists job (url text, title text, closing text, department text, location text, contents text);')
+    c.execute('''create table if not exists job (
+                            url text primary key, 
+                            title text, 
+                            closing text, 
+                            department text, 
+                            location text, 
+                            contents text)')
     conn.commit()
     c.executemany('insert into job values (%s,%s,%s,%s,%s,%s)', (tuple(d.values()) for d in CACHE))
     conn.commit()
