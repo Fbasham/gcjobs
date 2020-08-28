@@ -86,6 +86,8 @@ def main():
         if key not in SEEN:
             ROWS.append(d)
             SEEN.add(key)
+        else:
+            print(f'duplicate found: {key[1]}'
 
     DATABASE_URL = os.environ['DATABASE_URL']
     if ROWS:
