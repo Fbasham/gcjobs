@@ -69,7 +69,8 @@ def main():
             text = ''
         finally:
             d['url'] = url
-            d['text'] = text
+            #possibly redundant adding the title,dept,loc, but ensures it always exists for search
+            d['text'] = text + d['title']+d['department']+d['location']
         return d
 
     async def main():    
@@ -86,8 +87,6 @@ def main():
         if key not in SEEN:
             ROWS.append(d)
             SEEN.add(key)
-        else:
-            print(f'duplicate found: {key[1]}')
 
     DATABASE_URL = os.environ['DATABASE_URL']
     if ROWS:
