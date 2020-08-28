@@ -85,7 +85,7 @@ def main():
         key = (d['url'],d['title'])
         if key not in SEEN:
             ROWS.append(d)
-            SEEN_URLS.add(key)
+            SEEN.add(key)
 
     DATABASE_URL = os.environ['DATABASE_URL']
     if ROWS:
