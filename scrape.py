@@ -19,7 +19,7 @@ def main():
     wait_for_tag = lambda tag: WebDriverWait(driver,30).until(lambda x: x.find_element_by_css_selector(tag))
 
     DOMAIN = 'https://emploisfp-psjobs.cfp-psc.gc.ca'
-    CACHE = []
+    ROWS,SEEN_URLS = [],set()
    
     try:
         driver.get(f'{DOMAIN}/psrs-srfp/applicant/page2440?requestedPage=1&tab=2')
@@ -38,12 +38,16 @@ def main():
                 x = row.select_one('a')
                 url,title = x.attrs.get('href'), x.text
                 date,dept,*loc = list(row.select_one('div.tableCell').stripped_strings)
-
-                CACHE.append({'url': f'{DOMAIN}{url}',
-                              'title': title,
-                              'closing': date.replace('Closing date: ',''),
-                              'department': dept.split(' - ')[0].strip(),
-                              'location': ','.join(loc)})
+                
+                if url not in SEEN_URLS:
+                    ROWS.append({'url': f'{DOMAIN}{url}',
+                                  'title': title,
+                                  'closing': date.replace('Closing date: ',''),
+                                  'department': dept.split(' - ')[0].strip(),
+                                  'location': ','.join(loc)}
+                    )
+                    
+                    SEEN_URLS.add(url)
 
     except Exception as e:
         print(e)
@@ -73,7 +77,7 @@ def main():
 
     async def main():    
         s = AsyncHTMLSession()
-        tasks = (scrape(s,d) for d in CACHE)
+        tasks = (scrape(s,d) for d in ROWS)
         return await asyncio.gather(*tasks)
 
     asyncio.run(main())
@@ -85,7 +89,7 @@ def main():
         c = conn.cursor()
         c.execute('drop table if exists job;')
         c.execute('CREATE TABLE if not exists job (id serial primary key, url text, title text, closing text, department text, location text, contents text);')
-        c.executemany('insert into job(url, title, closing, department, location, contents) values (%s,%s,%s,%s,%s,%s)', (tuple(d.values()) for d in CACHE))
+        c.executemany('insert into job(url, title, closing, department, location, contents) values (%s,%s,%s,%s,%s,%s)', (tuple(d.values()) for d in ROWS))
         conn.commit()
 
     print('data written to postgres')
