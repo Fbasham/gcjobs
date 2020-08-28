@@ -80,11 +80,12 @@ def main():
     asyncio.run(main())
     print('async finished running')
 
-    ROWS,SEEN_URLS = [],set()
+    ROWS,SEEN = [],set()
     for d in CACHE:
-        if d['url'] not in SEEN_URLS:
+        key = (d['url'],d['title'])
+        if key not in SEEN:
             ROWS.append(d)
-            SEEN_URLS.add(d['url'])
+            SEEN_URLS.add(key)
 
     DATABASE_URL = os.environ['DATABASE_URL']
     if ROWS:
