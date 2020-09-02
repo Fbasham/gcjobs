@@ -115,7 +115,7 @@ def main():
             c = conn.cursor()
             c.execute('drop table if exists job;')
             c.execute('CREATE TABLE if not exists job (id serial primary key, url text, title text, closing text, department text, location text, internal smallint, contents text);')
-            c.executemany('insert into job(url, title, closing, department, location, contents) values (%s,%s,%s,%s,%s,%s,%s)', (tuple(d.values()) for d in ROWS))
+            c.executemany('insert into job(url, title, closing, department, location, internal, contents) values (%s,%s,%s,%s,%s,%s,%s)', (tuple(d.values()) for d in ROWS))
             conn.commit()
         print('data written to postgres')
     else:
