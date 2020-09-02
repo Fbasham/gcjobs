@@ -12,25 +12,27 @@
         </div>
     </form>
 
-    <table class="table table-hover" align="center">
-        <tr>
-           <th class="text-nowrap" style="font-size:18px">Internal</th>
-           <th class="text-nowrap" style="font-size:18px">Title</th>
-           <th class="text-nowrap" style="font-size:18px">Department</th>
-           <th class="text-nowrap" style="font-size:18px">Closing Date</th>
-        {% for job in jobs %}
-        <tr>
-            <td style="text-align:center">
-              {% if job.internal == 1 %}
-                  <i class="far fa-thumbs-up" style="color: forestgreen" value={{job.internal}}></i>
-              {% else %}
-                  <i class="far fa-thumbs-down" style="color: firebrick" value={{job.internal}}></i>
-              {% endif %}
-            </td>
-            <td><a href={{ job.url }} target="_blank">{{ job.title }}</td>
-            <td>{{ job.department }}</td>
-            <td>{{ job.closing }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div style="overflow-x:auto;">
+        <table class="table table-hover" align="center">
+            <tr>
+               <th class="text-nowrap" style="font-size:18px">Internal</th>
+               <th class="text-nowrap" style="font-size:18px">Title</th>
+               <th class="text-nowrap" style="font-size:18px">Department</th>
+               <th class="text-nowrap" style="font-size:18px">Closing Date</th>
+            {% for job in jobs %}
+            <tr>
+                <td style="text-align:center">
+                  {% if job.internal == 1 %}
+                      <i class="far fa-thumbs-up" style="color: forestgreen" value={{job.internal}}></i>
+                  {% else %}
+                      <i class="far fa-thumbs-down" style="color: firebrick" value={{job.internal}}></i>
+                  {% endif %}
+                </td>
+                <td><a href={{ job.url }} target="_blank">{{ job.title }}</td>
+                <td>{{ job.department }}</td>
+                <td>{{ job.closing }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}
