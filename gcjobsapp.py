@@ -15,6 +15,7 @@ class Job(db.Model):
     closing = db.Column(db.Text)
     department = db.Column(db.Text)
     location = db.Column(db.Text)
+    internal = db.Column(db.Integer)
     contents = db.Column(db.Text)
 
 
