@@ -27,6 +27,7 @@ button.btn {
     text-align: left;
 }
 
+
 @media screen and (max-width: 768px) {
     .nav-large {
         display: none;
@@ -35,10 +36,6 @@ button.btn {
     .nav-small {
         display: flex;
         justify-content: space-between;
-    }
-
-    .navbar {
-        border-bottom: none;
     }
 
     .nav-header-quote {
