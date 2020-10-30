@@ -2,6 +2,14 @@
     border-bottom: 1.5px solid white;
 }
 
+.nav-small {
+    display: none;
+}
+
+.right-group {
+    display: flex;
+}
+
 .container {
     max-width: 80%;
 }
@@ -11,6 +19,15 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+    .nav-large {
+        display: none;
+    }
+
+    .nav-small {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .navbar {
         border-bottom: none;
     }
