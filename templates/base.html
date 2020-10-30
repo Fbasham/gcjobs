@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>GC Jobs Search</title>
-
+ 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cyborg/bootstrap.min.css" integrity="sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2" crossorigin="anonymous">
+    <link rel='stylesheet' type="text/css" href="../static/styles/style.css"/> 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='flavicon.ico') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='flavicon.ico') }}"/>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -17,12 +18,12 @@
  
   <head>
 
-    <nav class="navbar navbar-expand navbar-dark pt-2" style="background-color: #222222;">
+    <nav class="navbar navbar-expand navbar-dark pt-2">
       <div class="container-fluid">
         <div class="nav-header">
           <i class="fab fa-lg fa-fw fa-canadian-maple-leaf mr-2" style="color: #148cd6"></i><a class="navbar-brand" href={{ url_for("index") }}>GC Jobs Search</a>
         </div>
-        <div class="nav-header">
+        <div class="nav-header-quote">
           <i class="fab fa-sm fa-fw fas fa-quote-left mr-2" style="color: #148cd6"></i><i>The Government of Canada Jobs search engine - for humans</i><i class="fab fa-sm fa-fw fas fa-quote-right ml-2" style="color: #148cd6"></i>
         </div>
         <div class="nav-header">
@@ -34,9 +35,7 @@
 
     <body>
 
-
-        <div class="container justify-content-center w-75 py-4">
-
+        <div class="container justify-content-center py-4">
         {% block content %}
         {% endblock %}
 
@@ -46,7 +45,7 @@
 
     <footer class="page-footer font-small blue">
 
-      <div class="footer-copyright text-center py-3">© 2020 Copyright - Frank Basham - All rights reserved.</div>
+      <div class="footer-copyright text-center py-3">© 2020 Copyright - Frank Basham - All rights reserved</div>
 
     </footer>
 
