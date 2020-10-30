@@ -1,0 +1,25 @@
+.navbar {
+    border-bottom: 1.5px solid white;
+}
+
+.container {
+    max-width: 80%;
+}
+
+body {
+    background-color: #222;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        border-bottom: none;
+    }
+
+    .nav-header-quote {
+        display: none;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+  }
