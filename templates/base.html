@@ -18,20 +18,32 @@
  
   <head>
 
-    <nav class="navbar navbar-expand navbar-dark pt-2">
-      <div class="container-fluid">
-        <div class="nav-header">
-          <i class="fab fa-lg fa-fw fa-canadian-maple-leaf mr-2" style="color: #148cd6"></i><a class="navbar-brand" href={{ url_for("index") }}>GC Jobs Search</a>
+    <div class="nav-large">
+      <nav class="navbar navbar-expand navbar-dark pt-2">
+        <div class="container-fluid">
+          <div class="nav-header">
+            <i class="fab fa-lg fa-fw fa-canadian-maple-leaf mr-2" style="color: #148cd6"></i><a class="navbar-brand" href={{ url_for("index") }}>GC Jobs Search</a>
+          </div>
+          <div class="nav-header-quote">
+            <i class="fab fa-sm fa-fw fas fa-quote-left mr-2" style="color: #148cd6"></i><i>The Government of Canada Jobs search engine - for humans</i><i class="fab fa-sm fa-fw fas fa-quote-right ml-2" style="color: #148cd6"></i>
+          </div>
+          <div class="nav-header">
+                <span><i class="fas fa-address-card mr-2" style="color: #148cd6"></i><a class="navbar-brand" href={{ url_for("about") }}>About</a></span>
+                <span><i class="fas fa-question-circle mr-2" style="color: #148cd6"></i><a class="navbar-brand" href={{ url_for("help") }}>Help</a></span>
+          </div>
         </div>
-        <div class="nav-header-quote">
-          <i class="fab fa-sm fa-fw fas fa-quote-left mr-2" style="color: #148cd6"></i><i>The Government of Canada Jobs search engine - for humans</i><i class="fab fa-sm fa-fw fas fa-quote-right ml-2" style="color: #148cd6"></i>
-        </div>
-        <div class="nav-header">
-              <span><i class="fas fa-address-card mr-2" style="color: #148cd6"></i><a class="navbar-brand" href={{ url_for("about") }}>About</a></span>
-              <span><i class="fas fa-question-circle mr-2" style="color: #148cd6"></i><a class="navbar-brand" href={{ url_for("help") }}>Help</a></span>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
+
+    <div class="nav-small">
+          <div class="left-group">
+            <i class="fab fa-lg fa-fw fa-canadian-maple-leaf mr-2" style="color: #148cd6"></i><a class="navbar-brand" style="color: white" href={{ url_for("index") }}>GC Jobs Search</a>
+          </div>
+          <div class="right-group">
+            <div><i class="fas fa-address-card mr-2" style="color: #148cd6"></i><a class="navbar-brand"  style="color: white" href={{ url_for("about") }}>About</a></div>
+            <div><i class="fas fa-question-circle mr-2" style="color: #148cd6"></i><a class="navbar-brand"  style="color: white" href={{ url_for("help") }}>Help</a></div>
+          </div>
+    </div>
 
     <body>
 
