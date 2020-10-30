@@ -9,55 +9,65 @@
 
 <div class="container py-1">
     <div class="accordion" id="accordion">
-    
-      <div class="card z-depth-0 bordered">
-        <div class="card-header" id="headingOne2">
-          <h5 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne2"
-              aria-expanded="true" aria-controls="collapseOne2" style="font-size: 15px; text-decoration: none; color: white;">
-              <i class="fas fa-lg fa-question mr-4 ml-0" style="color: #148cd6"></i>How do I use the search bar?
-            </button>
-          </h5>
-        </div>
-        <div id="collapseOne2" class="collapse" aria-labelledby="headingOne2"
-          data-parent="#accordion">
-          <div class="card-body">
-            On the home page, enter your query into the search bar.  Try using single words to get the widest search possible.
-            If you'd like to refine your search using multiple criteria, use comma separated values.  For example,
-            <span class="codehilite bg-secondary"><code>&nbsp</code><code>python, engineering, toronto, AS-05</code><code>&nbsp</code></span>
-            would return all posters that contain "python" and "engineering" and "toronto" and "AS-05".  The search is case insensitive.
+
+          <div class="card z-depth-0 bordered">
+            <div class="card-header" id="headingOne1">
+              <div class="help-container">
+                <div class='help-icon'><i class="fas fa-lg fa-question" style="color: #148cd6"></i></div>
+                <div>
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne1"
+                    aria-expanded="true" aria-controls="collapseOne1" style="font-size: 15px; text-decoration: none; color: white;">
+                    How do I use the search bar?
+                  </button>
+                </div>
+              </div>
           </div>
-        </div>
+          <div id="collapseOne1" class="collapse" aria-labelledby="headingOne1"
+            data-parent="#accordion">
+            <div class="card-body">
+              On the home page, enter your query into the search bar.  Try using single words to get the widest search possible.
+              If you'd like to refine your search using multiple criteria, use comma separated values.  For example,
+              <span class="codehilite bg-secondary"><code>&nbsp</code><code>python, engineering, toronto, AS-05</code><code>&nbsp</code></span>
+              would return all posters that contain "python" and "engineering" and "toronto" and "AS-05".  The search is case insensitive.
+            </div>
+          </div>
           
-      <div class="card z-depth-0 bordered">
-        <div class="card-header" id="headingTwo2">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-              data-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2" style="font-size: 15px; text-decoration: none; color: white;">
-              <i class="fas fa-lg fa-question mr-4 ml-0" style="color: #148cd6"></i>Why can't I find the newest posters that are on the official GC Jobs website?
-            </button>
-          </h5>
-        </div>
-        <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo2"
-          data-parent="#accordion">
-          <div class="card-body">
-            The most likely reason is that the script to pull new jobs into the database for this site is only run once or twice
-            per day.  Depending on the time you search, the results can differ.  I do plan on experimenting with the frequency of
-            running the script, but on a day-by-day basis once or twice per day seems reasonable.
+          <div class="card z-depth-0 bordered">
+            <div class="card-header" id="headingTwo2">
+              <div class="help-container">
+                <div class='help-icon'><i class="fas fa-lg fa-question" style="color: #148cd6"></i></div>
+                <div>
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo2"
+                    aria-expanded="true" aria-controls="collapseTwo2" style="font-size: 15px; text-decoration: none; color: white;">
+                    Why can't I find the newest posters that are on the official GC Jobs website?
+                  </button>
+                </div>
+              </div>
+          </div>
+          <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo2"
+            data-parent="#accordion">
+            <div class="card-body">
+              The most likely reason is that the script to pull new jobs into the database for this site is only run once or twice
+              per day.  Depending on the time you search, the results can differ.  I do plan on experimenting with the frequency of
+              running the script, but on a day-by-day basis once or twice per day seems reasonable.
+            </div>
           </div>
         </div>
-      </div>
       
-      <div class="card z-depth-0 bordered">
-        <div class="card-header" id="headingFour2">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-              data-target="#collapseFour2" aria-expanded="false" aria-controls="collapseFour2" style="font-size: 15px; text-decoration: none; color: white;">
-              <i class="fas fa-lg fa-question mr-4 ml-0" style="color: #148cd6"></i>How do I make a suggestion or report a bug?
-            </button>
-          </h5>
+
+        <div class="card z-depth-0 bordered">
+          <div class="card-header" id="headingThree3">
+            <div class="help-container">
+              <div class='help-icon'><i class="fas fa-lg fa-question" style="color: #148cd6"></i></div>
+              <div>
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree3"
+                  aria-expanded="true" aria-controls="collapseThree3" style="font-size: 15px; text-decoration: none; color: white;">
+                  How do I make a suggestion or report a bug?
+                </button>
+              </div>
+            </div>
         </div>
-        <div id="collapseFour2" class="collapse" aria-labelledby="headingFour2"
+        <div id="collapseThree3" class="collapse" aria-labelledby="headingThree3"
           data-parent="#accordion">
           <div class="card-body">
             I haven't implemented a direct email support feature, but in the future this may change.  For now, I can be reached through my LinkedIn handle: 
@@ -65,17 +75,21 @@
           </div>
         </div>
       </div>
+
       
       <div class="card z-depth-0 bordered">
-        <div class="card-header" id="headingFive2">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-              data-target="#collapseFive2" aria-expanded="false" aria-controls="collapseFive2" style="font-size: 15px; text-decoration: none; color: white;">
-              <i class="fas fa-lg fa-question mr-4 ml-0" style="color: #148cd6"></i>What happens to expired job posters?
-            </button>
-          </h5>
-        </div>
-      <div id="collapseFive2" class="collapse" aria-labelledby="headingFive2"
+        <div class="card-header" id="headingFour4">
+          <div class="help-container">
+            <div class='help-icon'><i class="fas fa-lg fa-question" style="color: #148cd6"></i></div>
+            <div>
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour4"
+                aria-expanded="true" aria-controls="collapseThree3" style="font-size: 15px; text-decoration: none; color: white;">
+                What happens to expired job posters?
+              </button>
+            </div>
+          </div>
+      </div>
+      <div id="collapseFour4" class="collapse" aria-labelledby="headingFour4"
           data-parent="#accordion">
           <div class="card-body">
             The results you see on the home page are all of the external job posters currently available at the last time they were pulled into
@@ -85,15 +99,18 @@
       </div>
 
       <div class="card z-depth-0 bordered">
-        <div class="card-header" id="headingSix2">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-              data-target="#collapseSix2" aria-expanded="false" aria-controls="collapseSix2" style="font-size: 15px; text-decoration: none; color: white;">
-              <i class="fas fa-lg fa-question mr-4 ml-0" style="color: #148cd6"></i>Is it possible to search using AND, OR, and NOT logical operators?
-            </button>
-          </h5>
-        </div>
-      <div id="collapseSix2" class="collapse" aria-labelledby="headingSix2"
+        <div class="card-header" id="headingFive5">
+          <div class="help-container">
+            <div class='help-icon'><i class="fas fa-lg fa-question" style="color: #148cd6"></i></div>
+            <div>
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive5"
+                aria-expanded="true" aria-controls="collapseFive5" style="font-size: 15px; text-decoration: none; color: white;">
+                Is it possible to search using AND, OR, and NOT logical operators?
+              </button>
+            </div>
+          </div>
+      </div>
+      <div id="collapseFive5" class="collapse" aria-labelledby="headingSix2"
           data-parent="#accordion">
           <div class="card-body">
             Currently AND is the only logical operator being supported and uses the comma separated syntax outlined under "How do I use the search bar?"
@@ -104,22 +121,25 @@
       </div>
 
       <div class="card z-depth-0 bordered">
-        <div class="card-header" id="headingSeven2">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-              data-target="#collapseSeven2" aria-expanded="false" aria-controls="collapseSeven2" style="font-size: 15px; text-decoration: none; color: white;">
-              <i class="fas fa-lg fa-question mr-4 ml-0" style="color: #148cd6"></i>Why do some searches return unexpected results?
-            </button>
-          </h5>
-        </div>
-      <div id="collapseSeven2" class="collapse" aria-labelledby="headingSeven2"
+        <div class="card-header" id="headingSix6">
+          <div class="help-container">
+            <div class='help-icon'><i class="fas fa-lg fa-question" style="color: #148cd6"></i></div>
+            <div>
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSix6"
+                aria-expanded="true" aria-controls="collapseSix6" style="font-size: 15px; text-decoration: none; color: white;">
+                Why do some searches return unexpected results?
+              </button>
+            </div>
+          </div>
+      </div>
+      <div id="collapseSix6" class="collapse" aria-labelledby="headingSeven2"
           data-parent="#accordion">
           <div class="card-body">
             Depending on the search criteria, some results could be unexpected.  For example, typing
               <span class="codehilite bg-secondary"><code>&nbsp</code><code>javascript</code><code>&nbsp</code></span> into the search bar
             will likely return some unrelated job posters.  This is because "javascript" could be mentioned in the HTML content, specifically in the body tag,
             of the poster despite not having anything to do with the actual job itself.  For most searches, this will be irrelevant,
-            but keep in mind that some searches might need to be refined.
+            but keep in mind that some searches might need to be refined. 
           </div>
         </div>
       </div>
