@@ -16,22 +16,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     
   <head>
-    <div class="nav-large">
-      <nav class="navbar navbar-expand navbar-dark pt-2">
-        <div class="container-fluid">
-          <div class="nav-header">
-            <a class="navbar-brand" href={{ url_for("index") }}><i class="fab fa-lg fa-fw fa-canadian-maple-leaf mr-2"></i>GC Jobs Search</a>
-          </div>
-          <div class="nav-header-quote">
-            <i class="fab fa-sm fa-fw fas fa-quote-left mr-2"></i><em>letting you search for what's in the poster and not just the title</em><i class="fab fa-sm fa-fw fas fa-quote-right ml-2"></i>
-          </div>
-          <div class="nav-header">
-                <span><a class="navbar-brand" href={{ url_for("about") }}><i class="fas fa-address-card mr-2"></i>About</a></span>
-                <span><a class="navbar-brand" href={{ url_for("help") }}><i class="fas fa-question-circle mr-2"></i>Help</a></span>
-          </div>
-        </div>
-      </nav>
-    </div>
+    <nav>
+      <div class="nav-header">
+        <a class="navbar-brand" href={{ url_for("index") }}><span><i class="fab fa-lg fa-fw fa-canadian-maple-leaf mr-2"></i></span>GC Jobs Search</a>
+      </div>
+      <div class="nav-header-quote">
+        <i class="fab fa-sm fa-fw fas fa-quote-left mr-2"></i><em>letting you search the poster and not just the title</em><i class="fab fa-sm fa-fw fas fa-quote-right ml-2"></i>
+      </div>
+      <div class="nav-header">
+            <a class="navbar-brand" href={{ url_for("about") }}><span><i class="fas fa-address-card mr-2"></i></span>About</a>
+            <a class="navbar-brand" href={{ url_for("help") }}><span><i class="fas fa-question-circle mr-2"></i></span>Help</a>
+      </div>
+    </nav>
 
     <body>
         <div class="container justify-content-center py-4">
