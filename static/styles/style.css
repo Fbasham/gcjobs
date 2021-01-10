@@ -13,6 +13,10 @@ nav {
   font-family: monospace;
 }
 
+.nav-right {
+  display: flex;
+}
+
 .container {
   max-width: 80%;
 }
@@ -57,6 +61,10 @@ button.btn {
 @media screen and (max-width: 850px) {
   nav {
     border-bottom: none;
+  }
+
+  .navbar-brand {
+    font-size: 0.9rem;
   }
 
   .nav-header-quote {
