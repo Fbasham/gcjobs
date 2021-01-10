@@ -2,12 +2,15 @@ i {
   color: #148cd6;
 }
 
-.navbar {
-  border-bottom: 1.5px solid white;
-}
-
-.right-group {
+nav {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8vh;
+  padding-left: 0.4rem;
+  border-bottom: 1.5px solid white;
+  background: linear-gradient(45deg, #222, #333);
+  font-family: monospace;
 }
 
 .container {
@@ -52,7 +55,7 @@ button.btn {
 }
 
 @media screen and (max-width: 850px) {
-  .navbar {
+  nav {
     border-bottom: none;
   }
 
@@ -62,5 +65,9 @@ button.btn {
 
   .container {
     max-width: 100%;
+  }
+
+  h4 {
+    font-size: 1.5rem;
   }
 }
