@@ -54,9 +54,26 @@ button.btn {
   height: 3rem;
 }
 
+.input-group-prepend {
+  height: 1.5rem;
+}
+
 .form-control {
   background: whitesmoke;
+  height: 1.5rem;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 100px;
 
 @media screen and (max-width: 850px) {
   nav {
