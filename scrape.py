@@ -1,5 +1,6 @@
 from selenium import webdriver
 from requests_html import AsyncHTMLSession
+from pyquery import PyQuery
 from bs4 import BeautifulSoup
 from selenium.webdriver.support.wait import WebDriverWait
 import psycopg2
@@ -78,12 +79,14 @@ def main():
             url = d.get('url')
             r = await s.get(url)
             text = r.html.find('body',first=True).text
-            test = "The job opportunity you have selected requires the Public Service Commission (PSC) to transfer you to the hiring organization's Web site or a service provider Web site they have selected to advertise this process."
+            test = "The job opportunity you have selected requires the Public Service Commission (PSC) to transfer you"
             if test in text:
                 anchor = r.html.find('main.container > p > a', first=True)
                 url = anchor.attrs.get('href')
                 r = await s.get(url)
-                text = r.html.find('body',first=True).text
+                pq = PyQuery(r.content)
+                pq('script').remove()
+                text = pq('body').text()
         except Exception as e:
             text = ''
         finally:
