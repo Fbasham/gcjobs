@@ -1,8 +1,16 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
+from datetime import datetime
+
 
 app = Flask(__name__)
+
+# Inject the current year into Base.html in the footer
+@app.context_processor
+def inject_year():
+    return dict(year=datetime.now().year)
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://duhavbtevmjlse:497a25e23f53fa872ec72f736cec8e5f40efc78738ed49ad8f90775e6f6dcbaa@ec2-3-215-207-12.compute-1.amazonaws.com:5432/d2n701ocfeo0rt'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
