@@ -39,10 +39,10 @@
     content in JSON format. Another shortcoming is that the GC Jobs website is
     heavily rendered in Javascript to initially load and paginate all of the job
     posters. This makes it slightly more difficult to cleanly grab content as
-    quickly as possible using Python. The workaround for this is to use
+    quickly as possible using Python, or most programming languages for that matter. The workaround for this is to use
     Selenium, a browser automation/simulating tool, to navigate through through
     the GC Jobs website, collect the links to each poster, and store them in a
-    list.
+    cache.
     <br />
     <br />
     Once all of the links have been collected, asynchronous HTTP requests can be
