@@ -108,7 +108,7 @@
         >
           <div class="card-body">
             I haven't implemented a direct email support feature, but in the
-            future this may change. For now, I can be reached through my
+            future this might change. For now, I can be reached through my
             LinkedIn handle:
             <a href="https://ca.linkedin.com/in/frank-basham" target="_blank"
               >Frank Basham</a
@@ -143,7 +143,7 @@
           data-parent="#accordion"
         >
           <div class="card-body">
-            The results you see on the home page are all of the external job
+            The results you see on the home page are all of the job
             posters currently available at the last time they were pulled into
             the database. If a poster expires and is no longer viewable on the
             office GC Jobs website, it will <em>eventually</em> be dropped on
@@ -167,7 +167,7 @@
               >
                 <i class="fas fa-lg fa-question mr-2"></i>
                 Is it possible to search using AND, OR, and NOT logical
-                operators?
+                operators or Regular Expressions?
               </button>
             </div>
           </div>
@@ -181,11 +181,7 @@
           <div class="card-body">
             Currently AND is the only logical operator being supported and uses
             the comma separated syntax outlined under "How do I use the search
-            bar?" In a future update I might include additional syntax for OR,
-            NOT, and a combination or AND, OR, and NOT. I don't envision there
-            being a pressing need for such searches though, which is why by
-            default AND is the only operator supported. The same goes for regex
-            searches.
+            bar?". 
           </div>
         </div>
       </div>
@@ -222,11 +218,9 @@
               ><code>&nbsp</code><code>javascript</code><code>&nbsp</code></span
             >
             into the search bar will likely return some unrelated job posters.
-            This is because "javascript" could be mentioned in the HTML content,
-            specifically in the body tag where the script pulls content from,
-            despite not having anything to do with the actual job itself. For
-            most searches, this will be irrelevant, but keep in mind that some
-            searches might need to be refined.
+            This is because "javascript" could be mentioned in the HTML content of the page,
+            specifically in a script tag, despite not having anything to do with the actual job itself. For
+            most searches, this will be irrelevant, but keep in mind that some searches might need to be refined.
           </div>
         </div>
       </div>
